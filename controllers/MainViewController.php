@@ -91,7 +91,7 @@ class MainViewController extends \Kobalt\SimpleBase\Controller {
         $this->modelName = $modelName;
         $this->viewName = $viewName;
         $this->model = new $modelName();
-        if ($this->router->local) {
+        if ($this->format == "html") {
             $this->view = new $viewName();
         } else {
             $this->view = "JSONView";
