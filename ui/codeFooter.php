@@ -1,4 +1,5 @@
-<footer>
+        </main>
+        <footer>
             <nav id="offsite">
                 <ul class="nolist">
                     <li><a href="https://github.com/kobaltkween/"><img src="<?php echo IMG_DIR; ?>githubLogo.png" alt="Git Hub" width="104" height="28"></a></li>

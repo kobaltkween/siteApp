@@ -2,6 +2,17 @@
 /* A controller for the main displays (products and images)
  */
 class MainViewController extends \Kobalt\SimpleBase\Controller {
+    
+     /* Sets the method based on the request method fed to the controller
+     * @return void
+     */
+    protected function setMethod($reqMethod) {
+        // Should only ever make get requests to this controller
+        $this->method = "GET"
+        if ($reqMethod !== $this->method) {
+            $this->notAllowed();
+        }
+    }
      
     
     /* A basic function for figuring out what the model is based on the smart URL
@@ -96,5 +107,17 @@ class MainViewController extends \Kobalt\SimpleBase\Controller {
         } else {
             $this->view = "JSONView";
         }
+    }
+    
+    /* A method to set the action based on the request method and whether or not there's an ID
+     * It just covers the CRUD actions, and assumes method names based on the base Model class
+     * This method is very likely to be overriden by subclasses as well
+     * @return: void
+     * @throws: \Exception
+     */
+    public function setAction() {
+        $haveId = (array_key_exists("id", $this->params) && $this->params["id"] >= 1) ? true : false;
+       // Shoule only have get requests for this controller
+       
     }
 }
