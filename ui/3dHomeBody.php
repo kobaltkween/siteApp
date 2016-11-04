@@ -1,7 +1,7 @@
             <section id="jumbo">
                 <div class="imageFull">
                     <img src="<?php echo IMG_DIR . $pageData->mainImg; ?>" alt="Portrait of a woman in African Wear 1 & 2">
-                    <h3></h3>
+                    <h3><?php echo $pageData->name; ?></h3>
                 </div>
             </section>
             <div id="text">
